@@ -1,5 +1,5 @@
 #  Add the absolute path of the world
-world_path: "/home/khaled/rosnavbench/src/nav2bench/worlds/default.sdf"
+world_path: "/home/khaled/rosnavbench/src/nav2bench/worlds/home.sdf"
 
 #  Add gazebo model path, if multiple path, please spereate them by a :
 models_path: "nav2bench/models"
@@ -9,6 +9,14 @@ urdf_file: '/home/khaled/rosnavbench/src/nav2bench/urdf/petra_robot_v2.urdf'
 
 #  If the robot is spawned by only urdf, then set the model_file to 'None'
 model_file: 'None'
+
+#  Add the absolute path of the map
+map_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.yaml"
+
+#  Add the absolute path of the map
+map_png_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.pgm"
+localization_params_path: "/home/khaled/rosnavbench/src/nav2bench/config/amcl_localization.yaml"
+nav_config: "/home/khaled/rosnavbench/src/nav2bench/config/navigation.yaml"
 
 trajectory_type: "defualt"
 
