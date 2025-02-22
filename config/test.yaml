@@ -1,0 +1,19 @@
+#  Add the absolute path of the world
+world_path: "/home/khaled/rosnavbench/src/nav2bench/worlds/default.sdf"
+
+#  Add gazebo model path, if multiple path, please spereate them by a :
+models_path: "nav2bench/models"
+
+#  Add the absolute path of the urdf and model files inside single qoutes ''
+urdf_file: '/home/khaled/rosnavbench/src/nav2bench/urdf/petra_robot_v2.urdf'
+
+#  If the robot is spawned by only urdf, then set the model_file to 'None'
+model_file: 'None'
+
+trajectory_type: "defualt"
+
+auto_generated_trajectory:
+  spawn_pose:
+    x: 0.0
+    y: 0.0
+    yaw: 0.0
