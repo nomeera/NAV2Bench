@@ -16,5 +16,30 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+install(PROGRAMS
+  scripts/pdf_generator.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
+install(PROGRAMS
+  scripts/performace_analysis.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/trajectory_generator.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+install(PROGRAMS
+  scripts/reset_robot.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+install(PROGRAMS
+  scripts/marker_publisher.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+install(PROGRAMS
+  scripts/follow_path.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 ament_package()

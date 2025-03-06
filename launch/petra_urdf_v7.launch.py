@@ -23,10 +23,10 @@ def generate_launch_description():
     model_file  = robot_specs['model_file']
 
     # Decide spawn pose from the trajectory type
-    if robot_specs['trajectory_type'] == 'defualt':
-    #     x   = robot_specs['user_defined_trajectories'][0]["spawn_pose"]["x"]
-    #     y   = robot_specs['user_defined_trajectories'][0]["spawn_pose"]["y"]
-    #     yaw = robot_specs['user_defined_trajectories'][0]["spawn_pose"]["yaw"]
+    if robot_specs['trajectory_type'] == 'user_defined':
+        x   = robot_specs['user_defined_trajectories'][0]["spawn_pose"]["x"]
+        y   = robot_specs['user_defined_trajectories'][0]["spawn_pose"]["y"]
+        yaw = robot_specs['user_defined_trajectories'][0]["spawn_pose"]["yaw"]
     # else:  # e.g. 'auto_generated'
         x   = robot_specs['auto_generated_trajectory']["spawn_pose"]["x"]
         y   = robot_specs['auto_generated_trajectory']["spawn_pose"]["y"]

@@ -1,5 +1,17 @@
+#  Name the experiment. This name will be the name of the report
+experiment_name: "test"
+
+#Save directory of results
+results_directory: "/home/khaled/rosnavbench/src/nav2bench/results"
+
 #  Add the absolute path of the world
 world_path: "/home/khaled/rosnavbench/src/nav2bench/worlds/home.sdf"
+
+#  Add the absolute path of the map
+map_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.yaml"
+
+#  Add the absolute path of the PNG map
+map_png_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.pgm"
 
 #  Add gazebo model path, if multiple path, please spereate them by a :
 models_path: "nav2bench/models"
@@ -10,18 +22,97 @@ urdf_file: '/home/khaled/rosnavbench/src/nav2bench/urdf/petra_robot_v2.urdf'
 #  If the robot is spawned by only urdf, then set the model_file to 'None'
 model_file: 'None'
 
-#  Add the absolute path of the map
-map_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.yaml"
+#  Choose a type of global local planners to be tested
+planner_type: ["NavFn", "smac_planner","ThetaStar","Lattice"]
+#  Choose one of the following controllers, by adding its name to the controller type list
+#  Note that these are the avaible controllers for the provided example
+#  DWB
+#  RPP
+#  RPP_RSC
+#  DWB_RSC
+controller_type: ["DWB", "RPP","DWB_RSC","RPP_RSC", "MPPI"] #name of behaviour tree
 
-#  Add the absolute path of the map
-map_png_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.pgm"
-localization_params_path: "/home/khaled/rosnavbench/src/nav2bench/config/amcl_localization.yaml"
+#  This option is intended for testing the same controller and planner combination several times
+#  Min value is one
+instances_num: 15
+
+#  Add the absolute path of the robot navigation configuration
 nav_config: "/home/khaled/rosnavbench/src/nav2bench/config/navigation.yaml"
 
-trajectory_type: "defualt"
+#  Add the directory of the behaviour tree
+behaviour_tree_directory: "/home/khaled/rosnavbench/src/nav2bench/config"
+
+localization_params_path: "/home/khaled/rosnavbench/src/nav2bench/config/amcl_localization.yaml"
+
+#Citeria for performace analysis includes: "Time" ,"CPU", "Memory", "Path Length" , "Safety"
+criteria: ["Time", "path_length", "CPU", "Memory", "Safety"]
+
+#Wieght for each criteria as a number from 1 to 9
+#Set None if the wieght to be set automatcally giving that the importance to the eariler criteria in the matrix
+weights: "None"
+
+trajectory_type: "user_defined" # Options: "user_defined", "auto_generated"
+
+user_defined_trajectories:
+  - type: "single_goal"
+    spawn_pose:
+      x: 0.0
+      y: 0.0
+      yaw: 0.0
+    # single_goal:
+    #   x: 6.44
+    #   y: -1.41
+    #   theta: 0.0
+    single_goal:
+      x: 0.0
+      y: 0.0
+      theta: 0.0
+
+  - type: "waypoints"
+    spawn_pose:
+      x: 0.0
+      y: 0.0
+      yaw: 0.0
+    waypoints:
+      - x: 6.7
+        y: 3.7
+        theta: 0.0
+      - x: 5.0
+        y: 0.98
+        theta: 0.0
+      - x: -1.56
+        y: 1.13
+        theta: 0.0
+      - x: -6.36
+        y: 1.63
+        theta: 1.57
+
+  - type: "circle"
+    circle_center:
+      x: -2.7
+      y: 2.35
+    circle:
+      radius: 1.5
+
+  - type: "square"
+    spawn_pose:
+      x: -4.0
+      y: 1.0
+      yaw: 0.0
+    square:
+      side_length: 3.0
 
 auto_generated_trajectory:
   spawn_pose:
-    x: 0.0
-    y: 0.0
-    yaw: 0.0
+    x: 4.0
+    y: -3.0
+    yaw: -3.13
+  types:
+    - type: "short_trajectory"
+      short_trajectory:
+        upper_bound: 7
+    - type: "long_trajectory"
+      long_trajectory:
+        lower_bound: 8
+    - type: "waypoints"
+      waypoints: 5
