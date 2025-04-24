@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/home/nomeer/NoMeEr/Robotics-Software/ros2/pyenv/nav2bench/bin/python3
 
 import subprocess
 import numpy as np
 import json
 import os
-from nav2bench.extract_data import extract_data
+# from nav2bench.extract_data import extract_data
 from ament_index_python.packages import get_package_share_directory
 import yaml
 

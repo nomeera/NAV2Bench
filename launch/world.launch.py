@@ -13,11 +13,16 @@ def generate_launch_description():
         description='Name of the Gazebo world file to load'
     )
 
+    use_sim_time_arg = DeclareLaunchArgument(
+        'use_sim_time', default_value='true',
+        description='Use simulation (Gazebo) clock'
+    )
+
     pkg_petra_gazebo_basics = get_package_share_directory('nav2bench')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
     # Add your own gazebo library path here
-    gazebo_models_path = "/home/khaled/gazebo_models/gazebo_models"
+    gazebo_models_path = "/home/nomeer/gazebo_models/gazebo_models"
     os.environ["GZ_SIM_RESOURCE_PATH"] += os.pathsep + gazebo_models_path
 
 
@@ -28,7 +33,7 @@ def generate_launch_description():
         launch_arguments={'gz_args': [PathJoinSubstitution([
             pkg_petra_gazebo_basics,
             'worlds',
-            LaunchConfiguration('world')
+            LaunchConfiguration('world'),
         ]),
         #TextSubstitution(text=' -r -v -v1 --render-engine ogre')],
         TextSubstitution(text=' -r -v -v1')],
@@ -38,6 +43,7 @@ def generate_launch_description():
     launchDescriptionObject = LaunchDescription()
 
     launchDescriptionObject.add_action(world_arg)
+    launchDescriptionObject.add_action(use_sim_time_arg)
     launchDescriptionObject.add_action(gazebo_launch)
 
     return launchDescriptionObject

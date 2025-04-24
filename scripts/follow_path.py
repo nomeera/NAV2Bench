@@ -1,4 +1,5 @@
-#! /usr/bin/env python3
+#!/home/nomeer/NoMeEr/Robotics-Software/ros2/pyenv/nav2bench/bin/python3
+
 from operator import mod
 from turtle import circle
 from typing import List
@@ -25,7 +26,7 @@ import xml.etree.ElementTree as ET
 from sensor_msgs.msg import LaserScan
 import pandas as pd
 import subprocess
-from nav2bench.extract_data import extract_data
+# from nav2bench.extract_data import extract_data
 import threading
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.callback_groups import MutuallyExclusiveCallbackGroup,ReentrantCallbackGroup

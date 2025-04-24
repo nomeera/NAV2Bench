@@ -2,22 +2,23 @@
 experiment_name: "test"
 
 #Save directory of results
-results_directory: "/home/khaled/rosnavbench/src/nav2bench/results"
+results_directory: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/results"
 
 #  Add the absolute path of the world
-world_path: "/home/khaled/rosnavbench/src/nav2bench/worlds/home.sdf"
+world_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/worlds/home.sdf"
 
 #  Add the absolute path of the map
-map_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.yaml"
+map_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/maps/my_map.yaml"
 
 #  Add the absolute path of the PNG map
-map_png_path: "/home/khaled/rosnavbench/src/nav2bench/maps/my_map.pgm"
+map_png_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/maps/my_map.pgm"
 
-#  Add gazebo model path, if multiple path, please spereate them by a :
-models_path: "nav2bench/models"
+#  Add gazebo model path, if multiple path, please separate them by a :
+models_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/models"
 
-#  Add the absolute path of the urdf and model files inside single qoutes ''
-urdf_file: '/home/khaled/rosnavbench/src/nav2bench/urdf/petra_robot_v2.urdf'
+#  Add the absolute path of the urdf and model files inside single quotes ''
+# urdf_file: '/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/urdf/petra_robot_v2.urdf'
+
 
 #  If the robot is spawned by only urdf, then set the model_file to 'None'
 model_file: 'None'
@@ -37,12 +38,12 @@ controller_type: ["DWB", "RPP","DWB_RSC","RPP_RSC", "MPPI"] #name of behaviour t
 instances_num: 15
 
 #  Add the absolute path of the robot navigation configuration
-nav_config: "/home/khaled/rosnavbench/src/nav2bench/config/navigation.yaml"
+nav_config: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/config/navigation.yaml"
 
 #  Add the directory of the behaviour tree
-behaviour_tree_directory: "/home/khaled/rosnavbench/src/nav2bench/config"
+behaviour_tree_directory: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/config"
 
-localization_params_path: "/home/khaled/rosnavbench/src/nav2bench/config/amcl_localization.yaml"
+localization_params_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/config/amcl_localization.yaml"
 
 #Citeria for performace analysis includes: "Time" ,"CPU", "Memory", "Path Length" , "Safety"
 criteria: ["Time", "path_length", "CPU", "Memory", "Safety"]

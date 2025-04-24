@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
+#!/home/nomeer/NoMeEr/Robotics-Software/ros2/pyenv/nav2bench/bin/python3
 
-from cgi import print_arguments
 import posix
 from typing_extensions import final
 from nav2_simple_commander.robot_navigator import BasicNavigator
@@ -15,13 +14,13 @@ from transforms3d.euler import euler2quat, quat2euler
 from PIL import Image 
 import pandas as pd
 from ament_index_python.packages import get_package_share_directory
-import csv
+import csv  
 import time 
 
 rclpy.init()    
 navigator = BasicNavigator()
 navigator.waitUntilNav2Active()
-# Opening the config file to take the experiment data such as spawn pose, and the goal pose or trjectory
+# Opening the config file to take the experiment data such as spawn pose, and the goal pose or trajectory
 specs = os.environ['PARAMS_FILE']
 with open(specs, 'r') as file:
     robot_specs = yaml.safe_load(file)
