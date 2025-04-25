@@ -73,6 +73,7 @@ def generate_launch_description():
         parameters=[{
             "planner_type": LaunchConfiguration('planner'),
             "controller_type": LaunchConfiguration('controller'),
+            "use_sim_time": LaunchConfiguration("use_sim_time")
         }]
     )
     ld.add_action(trajectory_generator)
@@ -97,21 +98,24 @@ def generate_launch_description():
             package='nav2bench',
             executable='marker_publisher.py',
             name=f'marker_publisher_{index}',
-            output='screen'
+            output='screen',
+            parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}]
         ))
 
-        follow_path_nodes.append(Node(
-            package='nav2bench',
+        follow_path_nodes.append(Node(  
+            package='nav2bench',            
             executable='follow_path.py',
             name=f'follow_path_{index}',
-            output='screen'
+            output='screen',
+            parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}]
         ))
 
         reset_nodes.append(Node(
             package='nav2bench',
             executable='reset_robot.py',
             name=f'reset_robot_{index}',
-            output='screen'
+            output='screen',
+            parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}]
         ))
 
     # Event handling for process sequence

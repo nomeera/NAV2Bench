@@ -10,7 +10,7 @@ from ament_index_python.packages import get_package_share_directory
 import xml.etree.ElementTree as ET
 
     # -------------------------------------------------------------------------
-    # 1modify_sdf_file to fix ball joint error appear in rviz
+    # 1. Modify SDF file to fix ball joint error appear in rviz
     # -------------------------------------------------------------------------
 def modify_sdf_file(sdf_file):
     # Parse the SDF XML
@@ -49,7 +49,7 @@ def generate_launch_description():
         x = robot_specs["user_defined_trajectories"][0]["spawn_pose"]["x"]
         y = robot_specs["user_defined_trajectories"][0]["spawn_pose"]["y"]
         yaw = robot_specs["user_defined_trajectories"][0]["spawn_pose"]["yaw"]
-        # else:  # e.g. 'auto_generated'
+    elif robot_specs["trajectory_type"] == "auto_generated":
         x = robot_specs["auto_generated_trajectory"]["spawn_pose"]["x"]
         y = robot_specs["auto_generated_trajectory"]["spawn_pose"]["y"]
         yaw = robot_specs["auto_generated_trajectory"]["spawn_pose"]["yaw"]
@@ -118,7 +118,7 @@ def generate_launch_description():
         name="robot_state_publisher",
         output="screen",
         parameters=[
-            {"use_sim_time": True},
+            {"use_sim_time": LaunchConfiguration("use_sim_time")},
             {"robot_description": robot_desc},
         ],
         remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
@@ -131,7 +131,7 @@ def generate_launch_description():
         name="joint_state_publisher",
         output="both",
         parameters=[
-            {"use_sim_time": True},
+            {"use_sim_time": LaunchConfiguration("use_sim_time")},
         ],
     )
     # endregion
@@ -158,7 +158,7 @@ def generate_launch_description():
             "-Y",
             str(yaw),
         ],
-        parameters=[{"use_sim_time": True}],
+        parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}],
     )
     # endregion
 
@@ -170,6 +170,7 @@ def generate_launch_description():
         package="tf2_ros",
         executable="static_transform_publisher",
         arguments=["0", "0", "0.0", "0", "0", "0", "base_footprint", "base_link"],
+        parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}],
     )
     # endregion
 
@@ -194,7 +195,7 @@ def generate_launch_description():
         output="screen",
         parameters=[
             {
-                "use_sim_time": True,
+                "use_sim_time": LaunchConfiguration("use_sim_time"),
                 "qos_overrides./tf_static.publisher.durability": "transient_local",  # Overrides the QoS (Quality of Service) settings for the /tf_static topic to make it durable (e.g., for transformations).
             }
         ],
@@ -206,7 +207,7 @@ def generate_launch_description():
         arguments=["/camera/image"],
         output="screen",
         parameters=[
-            {"use_sim_time": True},
+            {"use_sim_time": LaunchConfiguration("use_sim_time")},
             {"camera.image.compressed.jpeg_quality": 75},
         ],
     )
@@ -217,7 +218,7 @@ def generate_launch_description():
         name="relay_camera_info",
         output="screen",
         arguments=["camera/camera_info", "camera/image/camera_info"],
-        parameters=[{"use_sim_time": True}],
+        parameters=[{"use_sim_time":    LaunchConfiguration("use_sim_time")}],
     )
 
     """'
@@ -225,7 +226,8 @@ def generate_launch_description():
         package='mogi_trajectory_server',
         executable='mogi_trajectory_server',
         name='mogi_trajectory_server',
-        parameters=[{'reference_frame_id': 'odom'}]
+        parameters=[{'reference_frame_id': 'odom'}],
+        parameters=[{"use_sim_time": LaunchConfiguration("use_sim_time")}],
     )
     """
     # endregion

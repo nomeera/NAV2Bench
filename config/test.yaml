@@ -2,50 +2,50 @@
 experiment_name: "test"
 
 #Save directory of results
-results_directory: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/results"
+results_directory: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/results"
 
 #  Add the absolute path of the world
-world_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/worlds/home.sdf"
+world_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/worlds/home.sdf"
 
 #  Add the absolute path of the map
-map_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/maps/my_map.yaml"
+map_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/maps/my_map.yaml"
 
 #  Add the absolute path of the PNG map
-map_png_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/maps/my_map.pgm"
+map_png_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/maps/my_map.pgm"
 
 #  Add gazebo model path, if multiple path, please separate them by a :
-models_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/models"
+models_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/models"
 
 #  Add the absolute path of the urdf and model files inside single quotes ''
-# urdf_file: '/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/urdf/petra_robot_v2.urdf'
+# urdf_file: '/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/urdf/petra_robot_v2.urdf'
 
 
 #  If the robot is spawned by only urdf, then set the model_file to 'None'
 model_file: 'None'
 
 #  Choose a type of global local planners to be tested
-planner_type: ["NavFn", "smac_planner","ThetaStar","Lattice"]
+planner_type: ["GridBased", "NavFn", "smac_planner","ThetaStar","Lattice"]
 #  Choose one of the following controllers, by adding its name to the controller type list
 #  Note that these are the avaible controllers for the provided example
 #  DWB
 #  RPP
 #  RPP_RSC
 #  DWB_RSC
-controller_type: ["DWB", "RPP","DWB_RSC","RPP_RSC", "MPPI"] #name of behaviour tree
+controller_type: ["FollowPath", "DWB", "RPP","DWB_RSC","RPP_RSC", "MPPI"] #name of behaviour tree
 
 #  This option is intended for testing the same controller and planner combination several times
 #  Min value is one
 instances_num: 15
 
 #  Add the absolute path of the robot navigation configuration
-nav_config: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/config/navigation.yaml"
+nav_config: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/config/navigation.yaml"
 
 #  Add the directory of the behaviour tree
-behaviour_tree_directory: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/config"
+behaviour_tree_directory: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/config"
 
-localization_params_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/nav2bench/src/nav2bench/config/amcl_localization.yaml"
+localization_params_path: "/home/nomeer/NoMeEr/Robotics-Software/ros2/Projects/NAV2Bench/src/NAV2Bench/config/amcl_localization.yaml"
 
-#Citeria for performace analysis includes: "Time" ,"CPU", "Memory", "Path Length" , "Safety"
+#Criteria for performace analysis includes: "Time" ,"CPU", "Memory", "Path Length" , "Safety"
 criteria: ["Time", "path_length", "CPU", "Memory", "Safety"]
 
 #Wieght for each criteria as a number from 1 to 9
@@ -57,9 +57,9 @@ trajectory_type: "user_defined" # Options: "user_defined", "auto_generated"
 user_defined_trajectories:
   - type: "single_goal"
     spawn_pose:
-      x: 0.0
-      y: 0.0
-      yaw: 0.0
+      x: 2.52
+      y: 1.52
+      yaw: -1.55
     # single_goal:
     #   x: 6.44
     #   y: -1.41
@@ -71,9 +71,9 @@ user_defined_trajectories:
 
   - type: "waypoints"
     spawn_pose:
-      x: 0.0
-      y: 0.0
-      yaw: 0.0
+      x: 2.52
+      y: 1.52
+      yaw: -1.55
     waypoints:
       - x: 6.7
         y: 3.7
@@ -97,9 +97,9 @@ user_defined_trajectories:
 
   - type: "square"
     spawn_pose:
-      x: -4.0
-      y: 1.0
-      yaw: 0.0
+      x: 2.52
+      y: 1.52
+      yaw: -1.55
     square:
       side_length: 3.0
 
