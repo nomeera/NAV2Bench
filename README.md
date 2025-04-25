@@ -64,10 +64,8 @@ The package is currently under development and is not yet ready for production u
 ---
 
 - Test DWA controller with GridBased planner and Tune parameters for best performance
-    * Issues:
-        - Robot rotates around itself and fails to reach the goal
 
-> [video](resources//Screencast%20from%202025-04-25%2007-05-57.mp4)
+![DWB](resources/DWB.gif)
 
 
 ### Planning

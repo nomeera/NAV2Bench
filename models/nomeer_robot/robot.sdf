@@ -54,7 +54,7 @@
 
         <!-- right_wheel arbitrary frame -->
         <frame name="right_wheel_frame" attached_to='base_link'>
-            <pose>-0.25 0.2 -0.12 1.5707 0 0</pose>
+            <pose>-0.25 -0.2 -0.12 1.5707 0 0</pose>
         </frame>
         <!-- right_wheel_link-->
         <link name="right_wheel_link">
@@ -101,7 +101,7 @@
 
         <!-- left_wheel arbitrary frame -->
         <frame name="left_wheel_frame" attached_to='base_link'>
-            <pose>-0.25 -0.2 -0.12 1.5707 0 0</pose>
+            <pose>-0.25 0.2 -0.12 1.5707 0 0</pose>
         </frame>
         <!-- left_wheel_link-->
         <link name="left_wheel_link">
