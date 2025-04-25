@@ -67,9 +67,7 @@ The package is currently under development and is not yet ready for production u
     * Issues:
         - Robot rotates around itself and fails to reach the goal
 
-<video width="640" height="480" controls>
-  <source src="/src/NAV2Bench/resources/Screencast from 2025-04-25 07-05-57.mp4" type="video/mp4">
-</video>
+> [video](/src/NAV2Bench/resources/Screencast%20from%202025-04-25%2007-05-57.mp4)
 
 
 ### Planning
