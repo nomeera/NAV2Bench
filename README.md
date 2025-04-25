@@ -50,15 +50,15 @@ The package is currently under development and is not yet ready for production u
 
 - Modify package to work with sdf file (gz sim standard)
 
-    > [modify_sdf_file](/src/NAV2Bench/launch/petra_urdf_v7.launch.py#L15-L30)
+    > [modify_sdf_file](launch/petra_urdf_v7.launch.py#L15-L30)
 
-    > [spawn_robot_node](/src/NAV2Bench/launch/petra_urdf_v7.launch.py#L139-L162)
+    > [spawn_robot_node](launch/petra_urdf_v7.launch.py#L139-L162)
 
 - Fix the issues that prevent package from launching
 - Test amcl-localization and Tune parameters for best performance
-    > [amcl](/src/NAV2Bench/config/amcl_localization.yaml)
+    > [amcl](config/amcl_localization.yaml)
 
-![](/src/NAV2Bench/resources/frames.png)
+![](resources/frames.png)
 
 ### In Progress
 ---
@@ -67,7 +67,7 @@ The package is currently under development and is not yet ready for production u
     * Issues:
         - Robot rotates around itself and fails to reach the goal
 
-> [video](/src/NAV2Bench/resources/Screencast%20from%202025-04-25%2007-05-57.mp4)
+> [video](resources/Screencast from 2025-04-25 07-05-57.mp4)
 
 
 ### Planning
