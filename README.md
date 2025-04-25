@@ -79,6 +79,9 @@ The package is currently under development and is not yet ready for production u
 
 ### In Progress
 ---
+- Optimize controllers with GridBased
+- Test with other planners [NavFn, smac_planner, ThetaStar, Lattice]
+- Apply Benchmark concept to all planners and controllers
 
 
 ### Planning
