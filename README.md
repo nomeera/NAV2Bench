@@ -60,12 +60,25 @@ The package is currently under development and is not yet ready for production u
 
 ![](resources/frames.png)
 
+- Test controllers with GridBased planner and Tune parameters for best performance
+
+    - DWB
+    ![DWB](resources/DWB.gif)
+
+    - DWB_RSC
+    ![DWB_RSC](resources/DWB_RSC.gif)
+
+    - RPP
+    ![RPP](resources/RPP.gif)
+
+    - RPP_RSC
+    ![RPP_RSC](resources/RPP_RSC.gif)
+
+    - MPPI
+    ![MPPI](resources/MPPI.gif)
+
 ### In Progress
 ---
-
-- Test DWB controller with GridBased planner and Tune parameters for best performance
-
-![DWB](resources/DWB.gif)
 
 
 ### Planning
