@@ -63,7 +63,7 @@ The package is currently under development and is not yet ready for production u
 ### In Progress
 ---
 
-- Test DWA controller with GridBased planner and Tune parameters for best performance
+- Test DWB controller with GridBased planner and Tune parameters for best performance
 
 ![DWB](resources/DWB.gif)
 
