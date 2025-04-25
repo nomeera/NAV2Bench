@@ -67,7 +67,7 @@ The package is currently under development and is not yet ready for production u
     * Issues:
         - Robot rotates around itself and fails to reach the goal
 
-> [video](resources/Screencast from 2025-04-25 07-05-57.mp4)
+> [video](resources//Screencast%20from%202025-04-25%2007-05-57.mp4)
 
 
 ### Planning
